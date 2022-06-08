@@ -38,7 +38,8 @@ func main() {
 		for i := 0; i <= n-4; i++ {
 			var n1,n2,n3,n4 int64 = matrix[j][i],matrix[j][i+1],matrix[j][i+2],matrix[j][i+3]
 			prod := n1 * n2 * n3 * n4
-			if prod > largest {
+			
+			if prod >= largest {
 				largest = prod
 			}
 		}
@@ -49,7 +50,8 @@ func main() {
 		for i := 0; i <= n-1; i++ {
 			var n1,n2,n3,n4 int64 = matrix[j][i],matrix[j+1][i],matrix[j+2][i],matrix[j+3][i]
 			prod := n1 * n2 * n3 * n4
-			if prod > largest {
+			
+			if prod >= largest {
 				largest = prod
 			}
 		}
@@ -60,18 +62,20 @@ func main() {
 		for i := 0; i <= n-4; i++ {
 			var n1,n2,n3,n4 int64 = matrix[j][i],matrix[j+1][i+1],matrix[j+2][i+2],matrix[j+3][i+3]
 			prod := n1 * n2 * n3 * n4
-			if prod > largest {
+			
+			if prod >= largest {
 				largest = prod
 			}
 		}
 	}
 
+
 	// calculating /
-	for j := 3; j <= n-1; j++ {
+	for j := 0; j <= n-4; j++ {
 		for i := 3; i <= n-1; i++ {
-			var n1,n2,n3,n4 int64 = matrix[j][i],matrix[j-1][i-1],matrix[j-2][i-2],matrix[j-3][i-3]
+			var n1,n2,n3,n4 int64 = matrix[j][i],matrix[j+1][i-1],matrix[j+2][i-2],matrix[j+3][i-3]
 			prod := n1 * n2 * n3 * n4
-			if prod > largest {
+			if prod >= largest {
 				largest = prod
 			}
 		}
