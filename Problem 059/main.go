@@ -5,8 +5,6 @@ import (
 	"os"
 	"strings"
 	"strconv"
-
-	//"github.com/abadojack/whatlanggo"
 )
 
 func main(){
@@ -41,50 +39,15 @@ func main(){
 						l++
 					}
 				}
-				
-				/*
-				joined := strings.Join(res_slice, "")
-				fmt.Println(joined)
-				fmt.Println("---------------------")
-				fmt.Println("---------------------")
-				*/
-				//info := whatlanggo.Detect(joined)
-				//fmt.Println("Language:", info.Lang.String(), " Script:", whatlanggo.Scripts[info.Script], " Confidence: ", info.Confidence)
 				joined := strings.Join(res_slice, "")
 				if (!strings.Contains(joined, "}") && !strings.Contains(joined, "{") && !strings.Contains(joined, "<") && !strings.Contains(joined, ">")){
 					fmt.Println(i,j,k)
 					fmt.Println(joined)
 					fmt.Println("#######")
 				}
-				//info := whatlanggo.Detect(joined)
-				
-				/*
-				if (info.Lang.String() == "English"){
-					fmt.Println(joined)
-					//fmt.Println(i,j,k)
-					//fmt.Println("Language:", info.Lang.String(), " Script:", whatlanggo.Scripts[info.Script], " Confidence: ", info.Confidence)
-				}
-				*/
 			}
 		}
 	}
-
-	// loop over combination
-		// loop over runes
-			// xor with combination
-			// join string
-			// detect language
-
-			/*
-	joined := strings.Join(split, "")
-	fmt.Println(joined)
-
-
-
-	info := whatlanggo.Detect("Foje funkcias kaj foje ne funkcias")
-	fmt.Println("Language:", info.Lang.String(), " Script:", whatlanggo.Scripts[info.Script], " Confidence: ", info.Confidence)
-	*/
-
 }
 
 func cycle_password(text string, password string) string{
